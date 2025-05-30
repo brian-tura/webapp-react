@@ -7,8 +7,7 @@ const Header = () => {
             <nav className='navbar bg-primary mb-4'>
                 <div className='container-fluid'>
                     <Link className='navbar-brand' to="/">
-                        Home
-                        Details
+                        HomePage
                     </Link>
                 </div>
             </nav>
