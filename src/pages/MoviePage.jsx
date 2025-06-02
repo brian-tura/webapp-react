@@ -1,6 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
+import MovieContext from '../contexts/MovieContext'
+import { useParams } from 'react-router-dom'
 
 const MoviePage = () => {
+  
+  const { initalMovies } = useContext(MovieContext)
+  const { id } = useParams();
+  
   return (
     <>
       <div className='row'>
