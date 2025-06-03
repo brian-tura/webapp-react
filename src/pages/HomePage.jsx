@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MovieCard from '../components/MovieCard';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import MovieContext from '../contexts/MovieContext';
+import axios from 'axios';
 
 
 const HomePage = () => {
 
-  const { initialMovies } = useContext(MovieContext);
+  // const { initialMovies } = useContext(MovieContext);
+  const [initialMovies, setInitalMovies] = useState([])
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:3000/api/movies/').then((res) => {
+      console.log(res.data);
+      setInitalMovies(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
 
   return (
     <>
