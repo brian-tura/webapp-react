@@ -10,7 +10,7 @@ const ReviewForm = () => {
     const initalData = {
         movie_id: parseInt(id),
         name: "",
-        vote: "",
+        vote: null,
         text: ""
     }
 
@@ -25,8 +25,8 @@ const ReviewForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:3000/api/movies/reviews', formData).then((result) => {
-            navigate("/")
+        axios.post('http://127.0.0.1:3000/api/movies/reviews', formData).then(() => {
+            navigate(`/movies/${id}`)
         })
     }
 

@@ -37,6 +37,7 @@ const MoviePage = () => {
             <div key={rev.id} className='card mb-3 p-2'>
               <h4>{rev.name}</h4>
               <p>{rev.text}</p>
+              <p>{rev.vote}</p>
             </div>
           )}
         </div>
