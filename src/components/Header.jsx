@@ -9,6 +9,7 @@ const Header = () => {
                     <Link className='navbar-brand' to="/">
                         HomePage
                     </Link>
+                    
                 </div>
             </nav>
         </>

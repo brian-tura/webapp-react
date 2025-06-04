@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
 import MovieContext from '../contexts/MovieContext'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const MoviePage = () => {
 
   return (
     <>
+
       <div className='row'>
         <div className="col-12 col-md-6 col-lg-8">
           Immagine
@@ -30,6 +32,7 @@ const MoviePage = () => {
           <p>direttore: {movie.director}</p>
           <p>genere: {movie.genre}</p>
           <p>anno: {movie.release_year}</p>
+          <Link className='btn btn-primary my-3' to={`/movies/${id}/review`}>Add review</Link>
           {reviews.map((rev) =>
             <div key={rev.id} className='card mb-3 p-2'>
               <h4>{rev.name}</h4>

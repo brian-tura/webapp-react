@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import MoviePage from './pages/MoviePage';
 import './App.css';
 import MovieContext from './contexts/MovieContext';
+import ReviewForm from './components/ReviewForm';
 
 const initialMovies = [
   {
@@ -68,6 +69,7 @@ function App() {
             <Route element={<DefaultLayouts />}>
               <Route index element={<HomePage />}></Route>
               <Route path='/movies/:id' element={<MoviePage />}></Route>
+              <Route path='/movies/:id/review' element={<ReviewForm/>} />
             </Route>
           </Routes>
         </BrowserRouter>
